@@ -381,8 +381,6 @@ public class LocalMUCRoom implements MUCRoom, GroupEventListener {
         roomHistory = new MUCRoomHistory(this, new HistoryStrategy(mucService.getHistoryStrategy()));
         this.iqOwnerHandler = new IQOwnerHandler(this, packetRouter);
         this.iqAdminHandler = new IQAdminHandler(this, packetRouter);
-        // No one can join the room except the room's owner
-        this.lockedTime = startTime;
         // Set the default roles for which presence is broadcast
         rolesToBroadcastPresence.add("moderator");
         rolesToBroadcastPresence.add("participant");

@@ -676,7 +676,6 @@ public class MultiUserChatServiceImpl implements Component, MultiUserChatService
                                 throw new NotAllowedException();
                             }
                         }
-                        room.addFirstOwner(userjid);
                         created = true;
                     }
                 }
