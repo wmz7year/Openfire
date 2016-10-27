@@ -1857,4 +1857,21 @@
         </copy>
     </target>
 
+	<!-- =================================
+          target: docker
+         ================================= -->
+    <target name="docker" depends="openfire" description="docker image build">
+    	<copy todir="${target.openfireHome}">
+    		<fileset dir="${basedir}/build/docker" includes="Dockerfile" />
+    	</copy>
+    	<exec executable="docker">
+    		<arg value="build" />
+    		<arg value="-f" />
+    		<arg value="${target.openfireHome}/Dockerfile" />
+    		<arg value="-t" />
+    		<arg value="wmz7year/openfire:v${version.major}.${version.minor}.${version.revision}" />
+    		<arg value="." />
+    	</exec>
+    </target>
+
 </project>

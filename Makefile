@@ -26,3 +26,6 @@ eclipse: .settings .classpath .project
 
 .project:
 	ln -s build/eclipse/project .project
+
+docker:
+	cd build && ant docker
